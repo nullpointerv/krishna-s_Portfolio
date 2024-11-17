@@ -17,8 +17,8 @@ interface FloatingElementProps {
 
 const FloatingElement = ({ children, delay, initialPosition }: FloatingElementProps) => {
   return (
-    <div 
-      
+    <div
+
       className="absolute transform transition-all animate-float"
       style={{
         ...initialPosition,
@@ -35,11 +35,11 @@ export default function Home() {
   //const [scrolled, setScrolled] = useState(false)
 
   //useEffect(() => {
-   // const handleScroll = () => {
-    // setScrolled(window.scrollY > 50)
-    //}
-    //window.addEventListener('scroll', handleScroll)
-    //return () => window.removeEventListener('scroll', handleScroll)
+  // const handleScroll = () => {
+  // setScrolled(window.scrollY > 50)
+  //}
+  //window.addEventListener('scroll', handleScroll)
+  //return () => window.removeEventListener('scroll', handleScroll)
   //}, [])
 
   return (
@@ -113,31 +113,31 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 relative">
-  <div className="text-center transform transition-transform duration-500 hover:scale-105 space-y-6">
-    {/* Responsive Profile Image */}
-    <div className="mb-8">
-  <Image 
-    src="/krishhna.jpg"
-    alt="Krishna Kumar"
-    width={192} // 48px * 4 (for md:w-48)
-    height={192}
-    className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full mx-auto 
+        <div className="text-center transform transition-transform duration-500 hover:scale-105 space-y-6">
+          {/* Responsive Profile Image */}
+          <div className="mb-8">
+            <Image
+              src="/krishhna.jpg"
+              alt="Krishna Kumar"
+              width={192} // 48px * 4 (for md:w-48)
+              height={192}
+              className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full mx-auto 
              border-4 border-blue-500 shadow-lg hover:border-purple-500 
              transition-all duration-300"
-    style={{
-      objectFit: 'cover'
-    }}
-  />
-</div>
-    {/* Responsive Name */}
-    <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 bg-clip-text text-transparent"
-      style={{
-        background: 'linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899)',
-        WebkitBackgroundClip: 'text',
-        backgroundClip: 'text'
-      }}>
-      Krishna Kumar
-    </h1>
+              style={{
+                objectFit: 'cover'
+              }}
+            />
+          </div>
+          {/* Responsive Name */}
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 bg-clip-text text-transparent"
+            style={{
+              background: 'linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text'
+            }}>
+            Krishna Kumar
+          </h1>
           <div className="space-y-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl text-blue-400 transform hover:scale-105 transition-transform">
               Founder & CEO
@@ -162,13 +162,13 @@ export default function Home() {
                 icon: <Rocket size={40} />,
                 title: "Startup India Seed Fund",
                 desc: "Received a Funding of 10 Lakh INR",
-                color: "blue"
+                colorClass: "text-blue-500" // Change color to colorClass
               },
               {
                 icon: <Rocket size={40} />,
                 title: "Department of Science and Technology Dehradun",
                 desc: "Received a Funding of 5 Lakh INR",
-                color: "purple"
+                colorClass: "text-purple-500"
               },
               {
                 icon: <Rocket size={40} />,
@@ -189,7 +189,7 @@ export default function Home() {
                 color: "indigo"
               },
               {
-                icon: <Star size={40} className="text-amber-400"/>,
+                icon: <Star size={40} className="text-amber-400" />,
                 title: "Dev Bhoomi Uttarakhand University (DBUU)",
                 desc: "Won 1 Lakh prize money at Science Exhibition Fair",
                 color: "red"
@@ -199,10 +199,10 @@ export default function Home() {
                 key={index}
                 className="hover-float bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg transform transition-all duration-300 hover:bg-gray-700 group"
               >
-                <div className={`text-${item.color}-500 mb-4 group-hover:scale-110 transition-transform`}>
+                <div className={`${item.colorClass} mb-4 group-hover:scale-110 transition-transform`}>
                   {item.icon}
                 </div>
-                <h3 className={`text-xl font-bold mb-2 group-hover:text-${item.color}-400 transition-colors`}>
+                <h3 className="text-xl font-bold mb-2 group-hover:text-gray-100 transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-gray-400 group-hover:text-gray-300">{item.desc}</p>
@@ -242,75 +242,75 @@ export default function Home() {
       <section id="experience" className="py-20 px-4 sm:px-6">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Experience & Education</h2>
-          
+
           {/* Work Experience */}
           <div className="mb-12">
-  <h3 className="text-2xl font-bold mb-6 text-blue-500">Work Experience</h3>
-  <div className="hover-float bg-gray-800 p-6 rounded-lg mb-6">
-    <div className="flex flex-col sm:flex-row items-start gap-4">
-      <Briefcase className="text-blue-500 mt-1" />
-      <div>
-        <h4 className="text-xl font-bold">Founder & CEO</h4>
-        <a 
-          href="https://picraft.in" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="text-blue-500 hover:text-blue-400 underline transition-colors"
-        >
-          Picraft Technology Pvt Ltd
-        </a>
-        <p className="text-gray-400">2020 - Present</p>
-        <p className="mt-2">Leading the company&apos;s vision and strategy in 3D printing innovation</p>
-      </div>
-    </div>
-  </div>
-</div>
+            <h3 className="text-2xl font-bold mb-6 text-blue-500">Work Experience</h3>
+            <div className="hover-float bg-gray-800 p-6 rounded-lg mb-6">
+              <div className="flex flex-col sm:flex-row items-start gap-4">
+                <Briefcase className="text-blue-500 mt-1" />
+                <div>
+                  <h4 className="text-xl font-bold">Founder & CEO</h4>
+                  <a
+                    href="https://picraft.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-400 underline transition-colors"
+                  >
+                    Picraft Technology Pvt Ltd
+                  </a>
+                  <p className="text-gray-400">2020 - Present</p>
+                  <p className="mt-2">Leading the company&apos;s vision and strategy in 3D printing innovation</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Internships */}
           <div className="mb-12">
-  <h3 className="text-2xl font-bold mb-6 text-purple-500">Internships</h3>
-  <div className="space-y-6">
-    {[
-      {
-        title: "Tech Fellow ",
-        company: "Tech Counsellor (R2E Technologies Pvt Ltd)",
-        period: "Feb 2023 - May 2023",
-        link: ""  // Add link if available
-      },
-      {
-        title: "R&D and Tech Engineer Intern",
-        company: "Alien Versions",
-        period: "Dec 2023 - Jan 2024",
-        link: "https://alienversions.com/team/"  // Replace with actual URL
-      }
-    ].map((internship, index) => (
-      <div
-        key={index}
-        className="hover-float bg-gray-800 p-6 rounded-lg"
-      >
-        <div className="flex flex-col sm:flex-row items-start gap-4">
-          <Star className="text-purple-500 mt-1" />
-          <div>
-            <h4 className="text-xl font-bold">{internship.title}</h4>
-            {internship.link ? (
-              <a 
-                href={internship.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-purple-500 hover:text-purple-400 underline transition-colors"
-              >
-                {internship.company}
-              </a>
-            ) : (
-              <p className="text-purple-500">{internship.company}</p>
-            )}
-            <p className="text-gray-400">{internship.period}</p>
+            <h3 className="text-2xl font-bold mb-6 text-purple-500">Internships</h3>
+            <div className="space-y-6">
+              {[
+                {
+                  title: "Tech Fellow ",
+                  company: "Tech Counsellor (R2E Technologies Pvt Ltd)",
+                  period: "Feb 2023 - May 2023",
+                  link: ""  // Add link if available
+                },
+                {
+                  title: "R&D and Tech Engineer Intern",
+                  company: "Alien Versions",
+                  period: "Dec 2023 - Jan 2024",
+                  link: "https://alienversions.com/team/"  // Replace with actual URL
+                }
+              ].map((internship, index) => (
+                <div
+                  key={index}
+                  className="hover-float bg-gray-800 p-6 rounded-lg"
+                >
+                  <div className="flex flex-col sm:flex-row items-start gap-4">
+                    <Star className="text-purple-500 mt-1" />
+                    <div>
+                      <h4 className="text-xl font-bold">{internship.title}</h4>
+                      {internship.link ? (
+                        <a
+                          href={internship.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-purple-500 hover:text-purple-400 underline transition-colors"
+                        >
+                          {internship.company}
+                        </a>
+                      ) : (
+                        <p className="text-purple-500">{internship.company}</p>
+                      )}
+                      <p className="text-gray-400">{internship.period}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
-    ))}
-  </div>
-</div>                
 
           {/* Education */}
           <div>
@@ -330,56 +330,56 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-{/* Contact Section */}
-<section id="contact" className="py-20 px-4 sm:px-6 bg-gray-800/50">
-  <div className="container mx-auto">
-    <h2 className="text-3xl font-bold mb-12 text-center">Get in Touch</h2>
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
-      {[
-        { 
-          icon: <Mail />, 
-          title: "Email", 
-          content: "Kk1211114@gmail.com",
-          href: "mailto:Kk1211114@gmail.com"
-        },
-        { 
-          icon: <Phone />, 
-          title: "Phone", 
-          content: "+91 87891 39682",
-          href: "tel:+918789139682"
-        },
-        { 
-          icon: <Globe />, 
-          title: "Website", 
-          content: "picraft.in",
-          href: "https://picraft.in/"
-        },
-        { 
-          icon: <Linkedin />, 
-          title: "LinkedIn", 
-          content: "Krishna Kumar",
-          href: "https://www.linkedin.com/in/krishna-singh-89047b1b3/"
-        }
-      ].map((item, index) => (
-        <a
-          key={index}
-          href={item.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover-float bg-gray-700 p-6 rounded-lg group hover:bg-gray-600 transition-colors"
-        >
-          <div className="flex items-center gap-4">
-            <div className="text-blue-500 group-hover:text-blue-400">{item.icon}</div>
-            <div>
-              <h3 className="font-bold group-hover:text-blue-400">{item.title}</h3>
-              <p className="text-gray-300 group-hover:text-gray-100">{item.content}</p>
-            </div>
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-4 sm:px-6 bg-gray-800/50">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-12 text-center">Get in Touch</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {[
+              {
+                icon: <Mail />,
+                title: "Email",
+                content: "Kk1211114@gmail.com",
+                href: "mailto:Kk1211114@gmail.com"
+              },
+              {
+                icon: <Phone />,
+                title: "Phone",
+                content: "+91 87891 39682",
+                href: "tel:+918789139682"
+              },
+              {
+                icon: <Globe />,
+                title: "Website",
+                content: "picraft.in",
+                href: "https://picraft.in/"
+              },
+              {
+                icon: <Linkedin />,
+                title: "LinkedIn",
+                content: "Krishna Kumar",
+                href: "https://www.linkedin.com/in/krishna-singh-89047b1b3/"
+              }
+            ].map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover-float bg-gray-700 p-6 rounded-lg group hover:bg-gray-600 transition-colors"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="text-blue-500 group-hover:text-blue-400">{item.icon}</div>
+                  <div>
+                    <h3 className="font-bold group-hover:text-blue-400">{item.title}</h3>
+                    <p className="text-gray-300 group-hover:text-gray-100">{item.content}</p>
+                  </div>
+                </div>
+              </a>
+            ))}
           </div>
-        </a>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="bg-gray-900 py-6 px-4 sm:px-6">
